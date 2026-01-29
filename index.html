@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media convert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="FileConvert" />
+<link rel="manifest" href="/favicons/site.webmanifest" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>media convert</h1>
+        </header>
+
+        <div class="converter-card">
+            <form id="converterForm">
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-file-upload"></i>
+                        input file
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" id="inputFile" class="file-input">
+                        <label for="inputFile" class="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>choose file or drag & drop</span>
+                        </label>
+                        <div id="inputFileInfo" class="file-info">no file selected</div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="formatSection" style="display: none;">
+                    <div class="section-title">
+                        <i class="fas fa-cog"></i>
+                        output format
+                    </div>
+
+                    <div id="formatCategories">
+                    </div>
+                </div>
+
+                <div class="form-section" id="settingsSection" style="display: none;">
+                    <div class="section-title">
+                        <i class="fas fa-sliders-h"></i>
+                        conversion settings
+                    </div>
+
+                    <div id="dynamicSettings">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <button type="submit" class="btn" id="convertBtn">
+                        <i class="fas fa-exchange-alt"></i>
+                        convert file
+                    </button>
+
+                    <button type="button" class="btn btn-secondary download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        download converted file
+                    </button>
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress" id="progressBar"></div>
+                    </div>
+                    <div class="status" id="statusText">preparing conversion...</div>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>built with ffmpeg - @calndev</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
